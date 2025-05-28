@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations - NutriLogic</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='recommendations.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span class="logo-text">Nutri<span class="highlight">Logic</span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('recommendations') }}" class="active">Recommendations</a></li>
+                <li><a href="{{ url_for('log_meal') }}">Log Meal</a></li>
+                <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                <li><a href="{{ url_for('logout') }}" class="btn-logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="recommendations-container">
+        <div class="container">
+            <h1>Your Personalized Recommendations</h1>
+            
+            <!-- Music Recommendations -->
+            <section class="recommendation-section">
+                <h2><i class="fas fa-music"></i> Music for Your Trimester</h2>
+                <div class="recommendation-grid">
+                    <div class="recommendation-card">
+                        <div class="card-header">
+                            <h3>Relaxation Playlist</h3>
+                            <span class="duration">30 mins</span>
+                        </div>
+                        <p>Calming melodies to help you unwind and reduce stress during pregnancy.</p>
+                        <div class="card-actions">
+                            <button class="btn-play">
+                                <i class="fas fa-play"></i> Play
+                            </button>
+                            <button class="btn-save">
+                                <i class="fas fa-bookmark"></i> Save
+                            </button>
+                        </div>
+                    </div>
+                    <div class="recommendation-card">
+                        <div class="card-header">
+                            <h3>Meditation Mix</h3>
+                            <span class="duration">20 mins</span>
+                        </div>
+                        <p>Peaceful sounds and guided meditation for better sleep and relaxation.</p>
+                        <div class="card-actions">
+                            <button class="btn-play">
+                                <i class="fas fa-play"></i> Play
+                            </button>
+                            <button class="btn-save">
+                                <i class="fas fa-bookmark"></i> Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Exercise Recommendations -->
+            <section class="recommendation-section">
+                <h2><i class="fas fa-running"></i> Safe Exercises</h2>
+                <div class="recommendation-grid">
+                    <div class="recommendation-card">
+                        <div class="card-header">
+                            <h3>Prenatal Yoga</h3>
+                            <span class="duration">25 mins</span>
+                        </div>
+                        <p>Gentle stretches and poses designed specifically for pregnant women.</p>
+                        <div class="card-actions">
+                            <button class="btn-play">
+                                <i class="fas fa-play"></i> Start
+                            </button>
+                            <button class="btn-save">
+                                <i class="fas fa-bookmark"></i> Save
+                            </button>
+                        </div>
+                    </div>
+                    <div class="recommendation-card">
+                        <div class="card-header">
+                            <h3>Walking Guide</h3>
+                            <span class="duration">15 mins</span>
+                        </div>
+                        <p>Safe walking routines to maintain fitness during pregnancy.</p>
+                        <div class="card-actions">
+                            <button class="btn-play">
+                                <i class="fas fa-play"></i> Start
+                            </button>
+                            <button class="btn-save">
+                                <i class="fas fa-bookmark"></i> Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Nutrition Tips -->
+            <section class="recommendation-section">
+                <h2><i class="fas fa-utensils"></i> Nutrition Tips</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <i class="fas fa-apple-alt"></i>
+                        <h3>Essential Nutrients</h3>
+                        <p>Focus on getting enough folic acid, iron, and calcium in your diet.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-glass-water"></i>
+                        <h3>Hydration</h3>
+                        <p>Stay hydrated by drinking at least 8-10 glasses of water daily.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Meal Timing</h3>
+                        <p>Eat small, frequent meals to manage nausea and maintain energy levels.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='recommendations.js') }}"></script>
+</body>
+</html> 

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Analysis - NutriLogic</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/static/favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='meal_analysis.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fa-solid fa-leaf"></i>
+                <span class="logo-text"><span class="highlight">Nutri</span>Logic</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/recommendations">Recommendations</a></li>
+                <li><a href="/log-meal" class="active">Log Meal</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/logout" class="btn-logout">Logout</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="analysis-container">
+            <h1>Meal Analysis Results</h1>
+            
+            <!-- Food Items Section -->
+            <section class="food-items">
+                <h2>Detected Food Items</h2>
+                <div id="foodItemsList" class="food-items-grid"></div>
+            </section>
+
+            <!-- Nutritional Summary -->
+            <section class="nutrition-summary">
+                <h2>Nutritional Summary</h2>
+                <div class="nutrition-grid">
+                    <div class="nutrition-card">
+                        <i class="fas fa-fire"></i>
+                        <h3>Calories</h3>
+                        <p id="totalCalories">0 kcal</p>
+                    </div>
+                    <div class="nutrition-card">
+                        <i class="fas fa-drumstick-bite"></i>
+                        <h3>Protein</h3>
+                        <p id="totalProtein">0g</p>
+                    </div>
+                    <div class="nutrition-card">
+                        <i class="fas fa-bread-slice"></i>
+                        <h3>Carbohydrates</h3>
+                        <p id="totalCarbs">0g</p>
+                    </div>
+                    <div class="nutrition-card">
+                        <i class="fas fa-cheese"></i>
+                        <h3>Fat</h3>
+                        <p id="totalFat">0g</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Detailed Nutrients -->
+            <section class="detailed-nutrients">
+                <h2>Detailed Nutrients</h2>
+                <div class="nutrients-grid" id="detailedNutrients"></div>
+            </section>
+
+            <!-- Recommendations -->
+            <section class="recommendations">
+                <h2>Recommendations</h2>
+                <div id="recommendationsList" class="recommendations-list"></div>
+            </section>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn-secondary" onclick="window.location.href='/log-meal'">
+                    <i class="fas fa-camera"></i> Log Another Meal
+                </button>
+                <button class="btn-primary" onclick="window.location.href='/dashboard'">
+                    <i class="fas fa-chart-bar"></i> View Dashboard
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='meal_analysis.js') }}"></script>
+</body>
+</html>

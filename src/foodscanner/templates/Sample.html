@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NutriLogic - AI Nutrition Advisor</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="/static/favicon/site.webmanifest">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="static/Sample.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="logo">
+        <i class="fa-solid fa-leaf"></i>
+        <span class="logo-text"><span class="highlight">Nutri</span>Logic</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="/auth" class="btn-login">Login</a></li>
+        <li><a href="/auth?tab=signup" class="btn-start-cooking">Sign up</a></li>
+      </ul>
+      <div class="menu-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section">
+    <div class="hero-background">
+      <img src="https://img.freepik.com/free-photo/breakfast-consists-bread-boiled-eggs-black-grape-salad-dressing-tomatoes-sliced-a-a-onions_1150-24482.jpg" alt="Healthy food background">
+      <div class="overlay"></div>
+    </div>
+    <div class="container">
+      <div class="hero-content">
+        <h1>Your Personal <span class="highlight">Nutrition AI</span> Assistant</h1>
+        <p>Get personalized nutrition recommendations based on your unique health profile, pregnancy stage, and dietary needs for optimal maternal and fetal health.</p>
+        <div class="hero-buttons">
+          <a href="#cta" class="btn-primary">Get Started <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="#pregnancy-nutrition" class="btn-secondary">Pregnancy Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>How NutriLogic Helps You</h2>
+        <p>Our AI-powered platform analyzes your unique profile to deliver personalized nutrition guidance that promotes better health outcomes for both mother and baby.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-utensils"></i>
+          </div>
+          <h3>Personalized Meal Plans</h3>
+          <p>Get trimester-specific meal plans based on your dietary preferences, allergies, and pregnancy nutritional needs.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <h3>Health Optimization</h3>
+          <p>Recommendations tailored to support fetal development and maternal health throughout pregnancy.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-clock"></i>
+          </div>
+          <h3>Real-time Adjustment</h3>
+          <p>Our AI adapts to your changing pregnancy needs, symptoms, and trimester-specific requirements.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fa-solid fa-share-nodes"></i>
+          </div>
+          <h3>Data Integration</h3>
+          <p>Connect with pregnancy tracking apps and health monitors for comprehensive care.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pregnancy Nutrition Section -->
+  <section id="pregnancy-nutrition" class="pregnancy-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Pregnancy Nutrition Guide</h2>
+        <p>Essential nutrition guidance for your pregnancy journey</p>
+      </div>
+      <div class="nutrition-grid">
+        <div class="nutrition-card">
+          <div class="card-icon"><i class="fa-solid fa-pills"></i></div>
+          <h3>Essential Nutrients</h3>
+          <ul>
+            <li>Folic Acid: 600-800 mcg daily</li>
+            <li>Iron: 27 mg daily</li>
+            <li>Calcium: 1000 mg daily</li>
+            <li>Vitamin D: 600 IU daily</li>
+            <li>Omega-3: 200-300 mg DHA daily</li>
+            <li>Vitamin B12: 2.6 mcg daily</li>
+          </ul>
+        </div>
+        <div class="nutrition-card">
+          <div class="card-icon"><i class="fa-solid fa-bowl-food"></i></div>
+          <h3>Recommended Foods</h3>
+          <ul>
+            <li>Leafy greens for folate</li>
+            <li>Lean proteins for development</li>
+            <li>Whole grains for energy</li>
+            <li>Fatty fish for brain development</li>
+            <li>Greek yogurt for calcium</li>
+            <li>Eggs for choline</li>
+          </ul>
+        </div>
+        <div class="nutrition-card">
+          <div class="card-icon"><i class="fa-solid fa-heart"></i></div>
+          <h3>Health Tips</h3>
+          <ul>
+            <li>Stay hydrated with 8-10 glasses of water</li>
+            <li>Eat small, frequent meals</li>
+            <li>Include fiber-rich foods</li>
+            <li>Avoid raw or undercooked foods</li>
+            <li>Limit caffeine intake</li>
+            <li>Choose nutrient-dense snacks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recommendations Section -->
+  <section id="recommendations" class="recommendations-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Personalized Recommendations</h2>
+        <p>Discover foods and nutrition strategies tailored to your health profile</p>
+      </div>
+      <div class="tab-container">
+        <div class="tabs">
+          <button class="tab-btn active" data-tab="tab1">Recommendations</button>
+          <button class="tab-btn" data-tab="tab2">Recommended Foods</button>
+          <button class="tab-btn" data-tab="tab3">Meal Ideas</button>
+        </div>
+        <div class="tab-content">
+          <div class="tab-pane active" id="tab1">
+            <div class="recommendations-grid trimester-recommendations" data-trimester="first-trimester">
+              <div class="recommendation-card">
+                <div class="card-label">Exercise Guide</div>
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a" alt="Prenatal Exercise">
+                <div class="card-body">
+                  <h3>Safe First Trimester Exercise</h3>
+                  <p>Low-impact activities like walking, swimming, and prenatal yoga to maintain fitness while managing fatigue and morning sickness.</p>
+                  <a href="#" class="card-link">View exercise guide <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="recommendation-card">
+                <div class="card-label">Rest & Recovery</div>
+                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15" alt="Rest and Sleep">
+                <div class="card-body">
+                  <h3>Managing Early Pregnancy Fatigue</h3>
+                  <p>Strategies for quality sleep, stress management, and balancing rest with daily activities during the first trimester.</p>
+                  <a href="#" class="card-link">Sleep tips <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="recommendation-card">
+                <div class="card-label">Morning Sickness</div>
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="Healthy Snacks">
+                <div class="card-body">
+                  <h3>Managing Morning Sickness</h3>
+                  <p>Tips for managing nausea, including small frequent meals, ginger remedies, and staying hydrated.</p>
+                  <a href="#" class="card-link">View tips <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="recommendation-card">
+                <div class="card-label">Prenatal Care</div>
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118" alt="Prenatal Care">
+                <div class="card-body">
+                  <h3>Early Prenatal Care</h3>
+                  <p>Essential prenatal care steps, including vitamin supplementation, regular check-ups, and early screening tests.</p>
+                  <a href="#" class="card-link">Learn more <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="recommendations-grid trimester-recommendations" data-trimester="second-trimester" style="display: none;">
+              <div class="recommendation-card">
+                <div class="card-label">Physical Activity</div>
+                <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2" alt="Pregnancy Exercise">
+                <div class="card-body">
+                  <h3>Moderate Exercise Routine</h3>
+                  <p>Safe strength training and cardio exercises to maintain fitness and prepare for delivery while accommodating your growing belly.</p>
+                  <a href="#" class="card-link">Exercise plan <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="recommendation-card">
+                <div class="card-label">Mental Wellness</div>
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773" alt="Mental Health">
+                <div class="card-body">
+                  <h3>Emotional Well-being</h3>
+                  <p>Mindfulness practices, stress management techniques, and emotional support resources for a healthy pregnancy journey.</p>
+                  <a href="#" class="card-link">Wellness guide <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="recommendation-card">
+                <div class="card-label">Nutrition Boost</div>
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061" alt="Healthy Food">
+                <div class="card-body">
+                  <h3>Energy-Boosting Nutrition</h3>
+                  <p>Optimal nutrition strategies for the second trimester, focusing on protein, iron, and calcium-rich foods.</p>
+                  <a href="#" class="card-link">Nutrition guide <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="recommendation-card">
+                <div class="card-label">Posture & Alignment</div>
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a" alt="Posture">
+                <div class="card-body">
+                  <h3>Maintaining Good Posture</h3>
+                  <p>Tips for maintaining proper posture as your belly grows, including exercises and ergonomic adjustments.</p>
+                  <a href="#" class="card-link">Posture guide <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <div class="recommendations-grid trimester-recommendations" data-trimester="third-trimester" style="display: none;">
+              <div class="recommendation-card">
+                <div class="card-label">Birth Preparation</div>
+                <img src="https://images.unsplash.com/photo-1584515933487-779824d29309" alt="Birth Preparation">
+                <div class="card-body">
+                  <h3>Labor Preparation Exercises</h3>
+                  <p>Essential stretches, breathing techniques, and pelvic floor exercises to prepare your body for labor and delivery.</p>
+                  <a href="#" class="card-link">Preparation guide <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="recommendation-card">
+                <div class="card-label">Sleep Support</div>
+                <img src="https://images.unsplash.com/photo-1455612693675-112974d4880b" alt="Sleep Support">
+                <div class="card-body">
+                  <h3>Better Sleep Strategies</h3>
+                  <p>Positioning techniques, relaxation methods, and lifestyle adjustments for improved sleep in late pregnancy.</p>
+                  <a href="#" class="card-link">Sleep guide <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="recommendation-card">
+                <div class="card-label">Swelling Relief</div>
+                <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15" alt="Swelling Relief">
+                <div class="card-body">
+                  <h3>Managing Swelling</h3>
+                  <p>Tips for reducing swelling in feet and hands, including exercises, compression, and elevation techniques.</p>
+                  <a href="#" class="card-link">View tips <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="recommendation-card">
+                <div class="card-label">Hospital Prep</div>
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118" alt="Hospital Bag">
+                <div class="card-body">
+                  <h3>Hospital Bag Essentials</h3>
+                  <p>Complete checklist of items to pack for the hospital, including comfort items and necessary documents.</p>
+                  <a href="#" class="card-link">Checklist <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab2">
+            <div class="foods-grid">
+              <div class="food-card">
+                <div class="food-image">
+                  <img src="https://images.unsplash.com/photo-1604467715878-83e57e8bc129" alt="Greek Yogurt">
+                  <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="food-body">
+                  <div class="food-tags">
+                    <span class="tag">High Protein</span>
+                    <span class="tag">Breakfast</span>
+                  </div>
+                  <h3>Greek Yogurt</h3>
+                  <p>High in protein and probiotics, great for gut health.</p>
+                  <div class="nutrition-info">
+                    <div class="nutrient">
+                      <span class="value">150</span>
+                      <span class="label">Cal</span>
+                    </div>
+                    <div class="nutrient">
+                      <span class="value">15g</span>
+                      <span class="label">Protein</span>
+                    </div>
+                    <div class="nutrient">
+                      <span class="value">8g</span>
+                      <span class="label">Carbs</span>
+                    </div>
+                    <div class="nutrient">
+                      <span class="value">4g</span>
+                      <span class="label">Fat</span>
+                    </div>
+                  </div>
+                  <button class="add-btn"><i class="fa-solid fa-plus"></i> Add to Meal Plan</button>
+                </div>
+              </div>
+              <div class="food-card">
+                <div class="food-image">
+                  <img src="https://images.unsplash.com/photo-1528207776546-365bb710ee93" alt="Salmon">
+                  <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="food-body">
+                  <div class="food-tags">
+                    <span class="tag">Omega-3</span>
+                    <span class="tag">Dinner</span>
+                  </div>
+                  <h3>Wild Salmon</h3>
+                  <p>Rich in omega-3 fatty acids, essential for baby's brain development.</p>
+                  <div class="nutrition-info">
+                    <div class="nutrient">
+                      <span class="value">206</span>
+                      <span class="label">Cal</span>
+                    </div>
+                    <div class="nutrient">
+                      <span class="value">22g</span>
+                      <span class="label">Protein</span>
+                    </div>
+                    <div class="nutrient">
+                      <span class="value">0g</span>
+                      <span class="label">Carbs</span>
+                    </div>
+                    <div class="nutrient">
+                      <span class="value">12g</span>
+                      <span class="label">Fat</span>
+                    </div>
+                  </div>
+                  <button class="add-btn"><i class="fa-solid fa-plus"></i> Add to Meal Plan</button>
+                </div>
+              </div>
+              <div class="food-card">
+                <div class="food-image">
+                  <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2" alt="Spinach">
+                  <button class="favorite-btn"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="food-body">
+                  <div class="food-tags">
+                    <span class="tag">Iron Rich</span>
+                    <span class="tag">Folate</span>
+                  </div>
+                  <h3>Fresh Spinach</h3>
+                  <p>Packed with folate and iron, essential for preventing anemia during pregnancy.</p>
+                  <div class="nutrition-info">
+                    <div class="nutrient">
+                      <span class="value">23</span>
+                      <span class="label">Cal</span>
+                    </div>
+                    <div class="nutrient">
+                      <span class="value">2.9g</span>
+                      <span class="label">Protein</span>
+                    </div>
+                    <div class="nutrient">
+                      <span class="value">3.6g</span>
+                      <span class="label">Carbs</span>
+                    </div>
+                    <div class="nutrient">
+                      <span class="value">0.4g</span>
+                      <span class="label">Fat</span>
+                    </div>
+                  </div>
+                  <button class="add-btn"><i class="fa-solid fa-plus"></i> Add to Meal Plan</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab3">
+            <div class="meal-ideas-grid">
+              <div class="meal-category">
+                <h3>Breakfast Ideas</h3>
+                <div class="meal-cards">
+                  <div class="meal-card">
+                    <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8" alt="Overnight Oats">
+                    <div class="meal-info">
+                      <h4>Berry Overnight Oats</h4>
+                      <p>Rich in fiber, protein, and antioxidants</p>
+                      <ul class="meal-nutrients">
+                        <li>Fiber: 8g</li>
+                        <li>Protein: 15g</li>
+                        <li>Iron: 2.5mg</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="meal-card">
+                    <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543" alt="Avocado Toast">
+                    <div class="meal-info">
+                      <h4>Egg & Avocado Toast</h4>
+                      <p>Perfect balance of healthy fats and protein</p>
+                      <ul class="meal-nutrients">
+                        <li>Folate: 120mcg</li>
+                        <li>Protein: 12g</li>
+                        <li>Healthy Fats: 15g</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="meal-category">
+                <h3>Lunch Ideas</h3>
+                <div class="meal-cards">
+                  <div class="meal-card">
+                    <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd" alt="Quinoa Bowl">
+                    <div class="meal-info">
+                      <h4>Protein-Packed Quinoa Bowl</h4>
+                      <p>Complete protein with vegetables</p>
+                      <ul class="meal-nutrients">
+                        <li>Protein: 18g</li>
+                        <li>Iron: 4mg</li>
+                        <li>Fiber: 7g</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="meal-card">
+                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061" alt="Mediterranean Salad">
+                    <div class="meal-info">
+                      <h4>Mediterranean Salad</h4>
+                      <p>Rich in omega-3 and fresh vegetables</p>
+                      <ul class="meal-nutrients">
+                        <li>Omega-3: 1.2g</li>
+                        <li>Vitamin C: 85mg</li>
+                        <li>Folate: 220mcg</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <h2>What Our Users Say</h2>
+        <p>Discover how NutriLogic has helped people transform their health through personalized nutrition.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="quote">
+            "The personalized meal suggestions have helped me lose 15 pounds while still enjoying food I love. The AI knows exactly what works for my body."
+          </div>
+          <div class="user">
+            <div class="avatar">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+            </div>
+            <div class="user-info">
+              <h4>Sarah Johnson</h4>
+              <p>Fitness Enthusiast</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote">
+            "As someone with multiple food allergies, finding suitable meals was always a challenge. NutriLogic made it so much easier to eat healthy while avoiding allergens."
+          </div>
+          <div class="user">
+            <div class="avatar">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+            </div>
+            <div class="user-info">
+              <h4>Michael Chen</h4>
+              <p>Software Developer</p>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="quote">
+            "The nutritional insights helped me understand how food affects my energy levels throughout the day. My productivity has improved significantly!"
+          </div>
+          <div class="user">
+            <div class="avatar">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez">
+            </div>
+            <div class="user-info">
+              <h4>Emily Rodriguez</h4>
+              <p>Marketing Director</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="cta" class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2>Ready to Transform Your Nutrition Journey?</h2>
+        <p>Join thousands of users who have improved their health with AI-powered personalized nutrition recommendations.</p>
+        <a href="#" class="btn-primary">Get Started Now <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <div class="cta-images">
+        <div class="image-column">
+          <img src="https://images.unsplash.com/photo-1607532941433-304659e8198a" alt="Healthy food" class="cta-img img1">
+          <img src="https://images.unsplash.com/photo-1576402187878-974f70c890a5" alt="Healthy food planning" class="cta-img img2">
+        </div>
+        <div class="image-column">
+          <img src="https://images.unsplash.com/photo-1565895405138-6c3a1555da6a" alt="Person cooking" class="cta-img img3">
+          <img src="https://images.unsplash.com/photo-1542224566-6e85f2e6772f" alt="Health tracking" class="cta-img img4">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <div class="logo">
+            <i class="fa-solid fa-leaf"></i>
+            <span class="logo-text"><span class="highlight">Nutri</span>Logic</span>
+          </div>
+          <p>AI-powered personalized nutrition recommendations for better health outcomes.</p>
+          <div class="social-links">
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <div class="link-group">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">Nutrition Guide</a></li>
+              <li><a href="#">Recipe Database</a></li>
+              <li><a href="#">Health Calculator</a></li>
+              <li><a href="#">Meal Planning</a></li>
+            </ul>
+          </div>
+          <div class="link-group">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="link-group">
+            <h3>Get in Touch</h3>
+            <ul>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Support</a></li>
+              <li><a href="#">Partnerships</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; <span id="current-year"></span> NutriLogic. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Set current year in footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Handle all tab functionality
+    function initializeTabs(tabButtonsSelector, tabPanesSelector) {
+      const tabButtons = document.querySelectorAll(tabButtonsSelector);
+      const tabPanes = document.querySelectorAll(tabPanesSelector);
+
+      tabButtons.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Remove active class from all tabs and panes
+          tabButtons.forEach(t => t.classList.remove('active'));
+          tabPanes.forEach(p => p.classList.remove('active'));
+          
+          // Add active class to clicked tab
+          tab.classList.add('active');
+          
+          // Show corresponding pane
+          const paneId = tab.getAttribute('data-tab');
+          const targetPane = document.getElementById(paneId);
+          if (targetPane) {
+            targetPane.classList.add('active');
+          }
+
+          // Update recommendations if this is a trimester tab
+          if (paneId.includes('trimester')) {
+            updateRecommendations(paneId);
+          }
+        });
+      });
+    }
+
+    // Function to update recommendations based on trimester
+    function updateRecommendations(trimesterId) {
+      const recommendationGrids = document.querySelectorAll('.trimester-recommendations');
+      recommendationGrids.forEach(grid => {
+        if (grid.getAttribute('data-trimester') === trimesterId) {
+          grid.style.display = 'grid';
+        } else {
+          grid.style.display = 'none';
+        }
+      });
+    }
+
+    // Initialize trimester tabs
+    initializeTabs('.trimester-tabs .tab-btn', '.trimester-pane');
+    
+    // Initialize recommendation tabs
+    initializeTabs('.tab-container .tab-btn', '.tab-pane');
+  </script>
+</body>
+</html>
+

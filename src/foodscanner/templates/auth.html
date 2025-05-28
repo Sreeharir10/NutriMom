@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriLogic - Login/Signup</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/static/favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="static/auth.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-container">
+            <div class="auth-header">
+                <div class="logo">
+                    <a href="/" style="text-decoration: none; color: inherit;">
+                        <i class="fa-solid fa-leaf"></i>
+                        <span class="logo-text"><span class="highlight">Nutri</span>Logic</span>
+                    </a>
+                </div>
+                <div class="auth-tabs">
+                    <button class="tab-btn active" data-tab="login">Login</button>
+                    <button class="tab-btn" data-tab="signup">Sign Up</button>
+                </div>
+            </div>
+
+            <!-- Login Form -->
+            <div class="auth-form active" id="login-form">
+                <h2>Welcome Back</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                </form>
+            </div>
+
+            <!-- Signup Form -->
+            <div class="auth-form" id="signup-form">
+                <h2>Create Account</h2>
+                <form id="signupForm">
+                    <div class="carousel-container">
+                        <div class="carousel-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="carousel-slides">
+                            <!-- Step 1: Basic Info -->
+                            <div class="carousel-slide active" data-step="1">
+                                <h3>Basic Information</h3>
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="signup-password">Password</label>
+                                    <input type="password" id="signup-password" required>
+                                </div>
+                            </div>
+
+                            <!-- Step 2: Physical Info -->
+                            <div class="carousel-slide" data-step="2">
+                                <h3>Physical Information</h3>
+                                <div class="form-group">
+                                    <label for="height">Height (cm)</label>
+                                    <input type="number" id="height" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="weight">Current Weight (kg)</label>
+                                    <input type="number" id="weight" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="pre-pregnancy-weight">Pre-pregnancy Weight (kg)</label>
+                                    <input type="number" id="pre-pregnancy-weight" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="age">Age</label>
+                                    <input type="number" id="age" required>
+                                </div>
+                            </div>
+
+                            <!-- Step 3: Pregnancy Info -->
+                            <div class="carousel-slide" data-step="3">
+                                <h3>Pregnancy Information</h3>
+                                <div class="form-group">
+                                    <label for="trimester">Current Trimester</label>
+                                    <select id="trimester" required>
+                                        <option value="">Select Trimester</option>
+                                        <option value="1">First Trimester</option>
+                                        <option value="2">Second Trimester</option>
+                                        <option value="3">Third Trimester</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="multiple-pregnancies">Multiple Pregnancies</label>
+                                    <select id="multiple-pregnancies" required>
+                                        <option value="">Select Option</option>
+                                        <option value="no">No</option>
+                                        <option value="yes">Yes</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Existing Medical Conditions</label>
+                                    <div class="checkbox-group">
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="diabetes" name="medical_conditions" value="diabetes">
+                                            <label for="diabetes">Diabetes</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="hypertension" name="medical_conditions" value="hypertension">
+                                            <label for="hypertension">Hypertension</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="anemia" name="medical_conditions" value="anemia">
+                                            <label for="anemia">Anemia</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="thyroid" name="medical_conditions" value="thyroid">
+                                            <label for="thyroid">Thyroid Issues</label>
+                                        </div>
+                                        <div class="checkbox-item">
+                                            <input type="checkbox" id="other_condition" name="medical_conditions" value="other">
+                                            <label for="other_condition">Other</label>
+                                        </div>
+                                    </div>
+                                    <div id="other_condition_input" class="form-group" style="display: none; margin-top: 10px;">
+                                        <input type="text" id="other_condition_text" placeholder="Please specify your condition">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Step 4: Dietary Preferences -->
+                            <div class="carousel-slide" data-step="4">
+                                <h3>Dietary Preferences</h3>
+                                <div class="form-group">
+                                    <label for="diet-type">Diet Type</label>
+                                    <select id="diet-type" required>
+                                        <option value="">Select Diet Type</option>
+                                        <option value="non-vegetarian">Non-Vegetarian</option>
+                                        <option value="vegetarian">Vegetarian</option>
+                                        <option value="vegan">Vegan</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="allergies">Food Allergies (if any)</label>
+                                    <input type="text" id="allergies" placeholder="e.g., nuts, dairy">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <button type="button" class="btn-secondary" id="prev-btn" disabled>Previous</button>
+                            <button type="button" class="btn-primary" id="next-btn">Next</button>
+                            <button type="submit" class="btn-primary" id="submit-btn" style="display: none;">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="static/auth.js"></script>
+</body>
+</html> 

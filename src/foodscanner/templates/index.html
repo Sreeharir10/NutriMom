@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Your Meal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <div class="max-w-6xl mx-auto p-6">
+        <header class="flex justify-between items-center py-4">
+            <h1 class="text-2xl font-bold text-green-600">NutriMom</h1>
+            <nav class="space-x-6">
+                <a href="#" class="text-gray-600">Log Meal</a>
+                <a href="#" class="text-gray-600">Chat</a>
+                <a href="#" class="text-gray-600">Meal Plans</a>
+                <a href="#" class="text-gray-600">Resources</a>
+            </nav>
+        </header>
+        <main>
+            <h2 class="text-3xl font-bold">Log Your Meal</h2>
+            <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="mt-6 bg-white p-6 rounded-lg shadow-lg text-center">
+                    <label for="meal-upload" class="block text-lg font-medium text-gray-700">Upload an image of your meal</label>
+                    <div id="upload-box" class="mt-4 border-2 border-dashed border-gray-300 rounded-lg p-12 cursor-pointer hover:border-green-500">
+                        <input type="file" id="meal-upload" name="mealImage" class="hidden" accept="image/*">
+                        <p class="text-gray-500">Click to upload or drag and drop</p>
+                        <img id="preview-image" class="mt-4 mx-auto hidden max-w-full h-40 object-cover rounded-lg" />
+                    </div>
+                </div>
+                <div class="mt-6 bg-white p-6 rounded-lg shadow-lg">
+                    <label for="meal-description" class="block text-lg font-medium text-gray-700">Describe your meal</label>
+                    <textarea id="meal-description" name="mealText" class="w-full mt-2 p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-green-500" rows="4" placeholder="Write about your meal..."></textarea>
+                </div>
+                <div class="mt-6 text-center">
+                    <button id="submit-button" type="submit" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 opacity-50 cursor-not-allowed" disabled>Get Details</button>
+                </div>
+            </form>
+        </main>
+    </div>
+    
+    <script>
+        function updateButtonState() {
+            const fileInput = document.getElementById('meal-upload');
+            const textArea = document.getElementById('meal-description');
+            const submitButton = document.getElementById('submit-button');
+
+            if (fileInput.files.length > 0 || textArea.value.trim() !== "") {
+                submitButton.disabled = false;
+                submitButton.classList.remove("opacity-50", "cursor-not-allowed");
+            } else {
+                submitButton.disabled = true;
+                submitButton.classList.add("opacity-50", "cursor-not-allowed");
+            }
+        }
+
+        document.getElementById('upload-box').addEventListener('click', function() {
+            document.getElementById('meal-upload').click();
+        });
+
+        document.getElementById('meal-upload').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.getElementById('preview-image');
+                    img.src = e.target.result;
+                    img.classList.remove('hidden');
+                }
+                reader.readAsDataURL(file);
+            }
+            updateButtonState();
+        });
+
+        document.getElementById('meal-description').addEventListener('input', updateButtonState);
+    </script>
+</body>
+</html>

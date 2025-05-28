@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriLogic - Profile</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/static/favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="static/profile.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fa-solid fa-leaf"></i>
+                <span class="logo-text"><span class="highlight">Nutri</span>Logic</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/recommendations">Recommendations</a></li>
+                <li><a href="/profile" class="active">Profile</a></li>
+                <li><a href="/logout" class="btn-logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Profile Content -->
+    <div class="container">
+        <div class="profile-container">
+            <div class="profile-header">
+                <h1>My Profile</h1>
+                <button class="btn-edit">
+                    <i class="fa-solid fa-pen-to-square"></i> Edit Profile
+                </button>
+            </div>
+
+            <!-- View Mode -->
+            <div class="profile-content">
+                <div class="profile-section">
+                    <h2>Personal Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Name</label>
+                            <p id="name">Loading...</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Email</label>
+                            <p id="email">Loading...</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Age</label>
+                            <p id="age">Loading...</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Height</label>
+                            <p id="height">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Pregnancy Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Current Trimester</label>
+                            <p id="trimester">Loading...</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Due Date</label>
+                            <p id="due-date">Loading...</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Multiple Pregnancies</label>
+                            <p id="multiple-pregnancies">Loading...</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Medical Conditions</label>
+                            <p id="medical-conditions">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-section">
+                    <h2>Health Information</h2>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Current Weight</label>
+                            <p id="weight">Loading...</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Pre-pregnancy Weight</label>
+                            <p id="pre-pregnancy-weight">Loading...</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Diet Type</label>
+                            <p id="diet-type">Loading...</p>
+                        </div>
+                        <div class="info-item">
+                            <label>Allergies</label>
+                            <p id="allergies">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit Mode -->
+            <div class="edit-form hidden">
+                <form>
+                    <div class="profile-section">
+                        <h2>Personal Information</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="edit-name">Name</label>
+                                <input type="text" id="edit-name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-age">Age</label>
+                                <input type="number" id="edit-age" name="age" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-height">Height (cm)</label>
+                                <input type="number" id="edit-height" name="height" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h2>Pregnancy Information</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="edit-trimester">Current Trimester</label>
+                                <select id="edit-trimester" name="trimester" required>
+                                    <option value="1">First Trimester</option>
+                                    <option value="2">Second Trimester</option>
+                                    <option value="3">Third Trimester</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-multiple-pregnancies">Multiple Pregnancies</label>
+                                <select id="edit-multiple-pregnancies" name="multiple_pregnancies" required>
+                                    <option value="no">No</option>
+                                    <option value="yes">Yes</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Medical Conditions</label>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="edit-diabetes" name="medical_conditions" value="diabetes">
+                                        <label for="edit-diabetes">Diabetes</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="edit-hypertension" name="medical_conditions" value="hypertension">
+                                        <label for="edit-hypertension">Hypertension</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="edit-anemia" name="medical_conditions" value="anemia">
+                                        <label for="edit-anemia">Anemia</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="edit-thyroid" name="medical_conditions" value="thyroid">
+                                        <label for="edit-thyroid">Thyroid Issues</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="edit-other" name="medical_conditions" value="other">
+                                        <label for="edit-other">Other</label>
+                                    </div>
+                                </div>
+                                <div id="edit-other-condition" class="form-group" style="display: none; margin-top: 10px;">
+                                    <input type="text" id="edit-other-condition-text" placeholder="Please specify your condition">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h2>Health Information</h2>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="edit-weight">Current Weight (kg)</label>
+                                <input type="number" id="edit-weight" name="weight" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-pre-pregnancy-weight">Pre-pregnancy Weight (kg)</label>
+                                <input type="number" id="edit-pre-pregnancy-weight" name="pre_pregnancy_weight" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-diet-type">Diet Type</label>
+                                <select id="edit-diet-type" name="diet_type" required>
+                                    <option value="non-vegetarian">Non-Vegetarian</option>
+                                    <option value="vegetarian">Vegetarian</option>
+                                    <option value="vegan">Vegan</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="edit-allergies">Allergies</label>
+                                <input type="text" id="edit-allergies" name="allergies" placeholder="e.g., nuts, dairy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary">Cancel</button>
+                        <button type="submit" class="btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/profile.js"></script>
+</body>
+</html> 

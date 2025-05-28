@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log Meal - NutriLogic</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="/static/favicon/site.webmanifest">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='log_meal.css') }}">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fa-solid fa-leaf"></i>
+                <span class="logo-text"><span class="highlight">Nutri</span>Logic</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/recommendations">Recommendations</a></li>
+                <li><a href="/log-meal" class="active">Log Meal</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/logout" class="btn-logout">Logout</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="meal-log-container">
+            <h1>Log Your Meal</h1>
+            <form id="mealForm">
+                <div class="upload-section">
+                    <h2>Upload Meal Image</h2>
+                    <div class="upload-box" id="imagePreview">
+                        <div class="upload-content">
+                            <i class="fa-solid fa-camera"></i>
+                            <p>Click to upload or drag an image here</p>
+                            <span class="file-requirements">Accepted formats: PNG, JPG, JPEG (max 16MB)</span>
+                        </div>
+                    </div>
+                    <input type="file" 
+                           id="mealImage" 
+                           name="mealImage" 
+                           accept=".png,.jpg,.jpeg" 
+                           class="hidden"
+                           required>
+                </div>
+
+                <div class="description-section">
+                    <h2>Meal Description</h2>
+                    <textarea id="mealText" 
+                             name="mealText" 
+                             placeholder="Describe your meal..."
+                             rows="3"></textarea>
+                </div>
+
+                <div class="submit-section">
+                    <button type="button" id="clearButton" class="btn-submit">Clear</button>
+                    <button type="submit" id="submitButton" class="btn-submit" disabled>
+                        <i class="fa-solid fa-utensils"></i> Log Meal
+                    </button>
+                </div>
+            </form>
+
+            <div id="uploadProgress" class="upload-progress hidden">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p class="progress-text">Analyzing meal...</p>
+            </div>
+
+            <div id="errorMessage" class="error-message hidden"></div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='log_meal.js') }}"></script>
+</body>
+</html>

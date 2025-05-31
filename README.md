@@ -83,3 +83,6 @@ git clone https://github.com/your-username/nutrimom.git
 cd nutrimom
 cd src/foodscanner
 py app.py
+```
+#Add your API Key and Model Path in config.yaml file before running!
+#Also download necessary modules from requirements.txt

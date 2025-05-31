@@ -84,5 +84,5 @@ cd nutrimom
 cd src/foodscanner
 py app.py
 ```
-#Add your API Key and Model Path in config.yaml file before running!
-#Also download necessary modules from requirements.txt
+# Add your API Key and Model Path in config.yaml file before running!
+# Also download necessary modules from requirements.txt

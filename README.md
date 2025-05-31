@@ -54,14 +54,20 @@ Pregnancy and postpartum stages require increased nutritional awareness to suppo
 
 ## 📸 Screenshots
 
-### 🔐 Login Page
-![Login](screenshots/login.png)
+### 🔐 SignUp Page
+![SignUp](screenshots/signup.png)
 
 ### 🖼️ Upload Meal Image
-![Upload](screenshots/upload.png)
+![Upload](screenshots/logmeal.png)
 
 ### 📊 Nutrition Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/Dashboard.png)
+
+### User Profile
+![Profile](screenshots/profile.png)
+
+### Personalised Recommendations(Not Completed
+![Recommendations](screenshots/Recommendations.png)
 
 ---
 

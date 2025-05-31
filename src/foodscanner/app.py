@@ -7,6 +7,7 @@ from datetime import datetime, timedelta
 import traceback
 import os
 import requests
+import re
 
 from werkzeug.utils import secure_filename
 from calorie import process_image
@@ -201,6 +202,7 @@ def upload():
             
             # Process image with dietary info
             nutrition_data = process_image(image_bytes, dietary_info)
+            print(f"****DEBUG**** from app.py : variable : nutrition_data : \n{nutrition_data}")
             
             # Store analysis in session for meal analysis page
             session['meal_analysis'] = nutrition_data
@@ -479,37 +481,83 @@ def get_profile_data():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-@app.route('/meal-analysis')
-@login_required
-def meal_analysis():
-    return render_template('meal_analysis.html')
-
 @app.route('/api/meal-analysis')
 @login_required
 def get_meal_analysis():
     try:
         # Get the latest meal analysis from the session
         meal_data = session.get('meal_analysis')
-        
+
         if not meal_data:
             return jsonify({
                 'success': False,
                 'message': 'No meal analysis data found'
             })
-            
+
+        foods = []
+        nutrition_summary = {
+            'calories': '0',
+            'protein': '0g',
+            'carbohydrates': '0g',
+            'fat': '0g'
+        }
+        detailed_nutrients = {}
+        recommendations = []
+
+        for food_name, food_info in meal_data.items():
+            if food_name == 'user_data':
+                continue
+
+            foods.append({'name': food_name})
+            calories_match = re.search(r'(\d+)\s*kcal', food_info.get('Calories', ''))
+            if calories_match and nutrition_summary['calories'] == '0':
+                nutrition_summary['calories'] = calories_match.group(1)
+
+            protein_match = re.search(r'Protein[:\s]*([\d.]+)\s*g', food_info.get('Macronutrients', ''))
+            if protein_match and nutrition_summary['protein'] == '0g':
+                nutrition_summary['protein'] = f"{protein_match.group(1)}g"
+
+            carbs_match = re.search(r'Carbs[:\s]*([\d.]+)\s*g', food_info.get('Macronutrients', ''))
+            if carbs_match and nutrition_summary['carbohydrates'] == '0g':
+                nutrition_summary['carbohydrates'] = f"{carbs_match.group(1)}g"
+
+            fat_match = re.search(r'Fat[:\s]*([\d.]+)\s*g', food_info.get('Macronutrients', ''))
+            if fat_match and nutrition_summary['fat'] == '0g':
+                nutrition_summary['fat'] = f"{fat_match.group(1)}g"
+
+            vitamins_minerals = food_info.get('Key Vitamins & Minerals', '')
+            iron_match = re.search(r'Iron\s*\(?([\d.]+)\s*mg\)?', vitamins_minerals)
+            if iron_match and 'Iron' not in detailed_nutrients:
+                detailed_nutrients['Iron'] = {'amount': float(iron_match.group(1)), 'unit': 'mg', 'daily_value': 18}
+
+            calcium_match = re.search(r'Calcium\s*\(?([\d.]+)\s*mg\)?', vitamins_minerals)
+            if calcium_match and 'Calcium' not in detailed_nutrients:
+                detailed_nutrients['Calcium'] = {'amount': float(calcium_match.group(1)), 'unit': 'mg', 'daily_value': 1000}
+
+            recommendations.append({
+                'title': f"About {food_name}",
+                'description': f"{food_info.get('Pregnancy Benefits', '')} {food_info.get('Risks', '')} Best way to eat: {food_info.get('Best Ways to Eat', '')}"
+            })
+
         return jsonify({
             'success': True,
-            'foods': meal_data['foods'],
-            'nutrition_summary': meal_data['nutrition_summary'],
-            'detailed_nutrients': meal_data['detailed_nutrients'],
-            'recommendations': meal_data['recommendations']
+            'foods': foods,
+            'nutrition_summary': nutrition_summary,
+            'detailed_nutrients': detailed_nutrients,
+            'recommendations': recommendations
         })
-        
+
     except Exception as e:
+        print(f"Error in /api/meal-analysis: {e}")
         return jsonify({
             'success': False,
             'message': str(e)
         }), 500
+
+@app.route('/meal-analysis')
+@login_required
+def meal_analysis():
+    return render_template('meal_analysis.html')
 
 if __name__ == '__main__':
     init_db()  # Initialize database tables

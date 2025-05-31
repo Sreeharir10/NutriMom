@@ -1,0 +1,22 @@
+{
+  "user_data": {
+    "allergies": [
+      "nuts"
+    ],
+    "diet_type": "non-vegetarian",
+    "medical_conditions": [
+      "hypertension",
+      "anemia",
+      "thyroid"
+    ],
+    "trimester": 2
+  },
+  "Roti": {
+    "Calories": "120 kcal per 100g",
+    "Macronutrients": "Carbs: 25g, Protein: 3g, Fat: 2g, Fiber: 3g",
+    "Key Vitamins & Minerals": "Iron (1.5 mg), Calcium (40 mg)",
+    "Pregnancy Benefits": "Roti is a good source of carbohydrates, providing sustained energy during pregnancy. The iron content can help manage anemia by improving blood health and preventing fatigue. The calcium supports bone health for both the mother and the developing fetus. Whole wheat roti, in particular, contains fiber, which aids in digestion and prevents constipation, a common issue during pregnancy.",
+    "Risks": "Consuming excessive roti may lead to weight gain, which could exacerbate hypertension. Refined flour roti (maida) may lack essential nutrients and fiber, potentially contributing to blood sugar fluctuations.",
+    "Best Ways to Eat": "Pair roti with protein sources like lentils, lean meats, or fish to balance the meal. Incorporate vegetables or dal to increase fiber and nutrient intake. Opting for whole wheat roti (atta) instead of refined flour (maida) is recommended for higher fiber and nutrient content. Pair with vitamin C-rich foods like tomatoes or spinach to enhance iron absorption."
+  }
+}

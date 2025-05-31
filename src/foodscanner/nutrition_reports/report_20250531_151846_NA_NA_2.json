@@ -1,0 +1,22 @@
+{
+  "user_data": {
+    "allergies": [
+      "nuts"
+    ],
+    "diet_type": "non-vegetarian",
+    "medical_conditions": [
+      "hypertension",
+      "anemia",
+      "thyroid"
+    ],
+    "trimester": 2
+  },
+  "Plain Rice": {
+    "Calories": "130 kcal per 100g",
+    "Macronutrients": "Carbs: 28.5g, Protein: 2.7g, Fat: 0.5g, Fiber: 0.4g",
+    "Key Vitamins & Minerals": "Iron (0.2 mg), Folate (3 mcg)",
+    "Pregnancy Benefits": "Provides essential carbohydrates for energy, supporting the second trimester's increased needs. The iron content helps manage anemia, especially when paired with vitamin C-rich foods. Folate is crucial for fetal development, particularly in the second trimester.",
+    "Risks": "High glycemic index may impact blood sugar management, potentially worsening hypertension. Limited fiber and protein content necessitate balanced pairing with other nutrients to avoid excessive weight gain.",
+    "Best Ways to Eat": "Pair with non-vegetarian protein sources like chicken or fish for iron synergy. Incorporate vitamin C-rich foods (e.g., tomatoes) to enhance iron absorption. Add vegetables for fiber and prepare without over-rinsing to retain nutrients."
+  }
+}

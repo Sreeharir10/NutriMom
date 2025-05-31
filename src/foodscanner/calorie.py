@@ -55,7 +55,7 @@ def process_image(image_bytes, user_data):
         food_list_str = json.dumps(food_items)
 
         # 🟢 Ensure user data is passed correctly
-        combined_data = json.dumps(user_data)  
+        combined_data = json.dumps(user_data)
 
         # Load LLM chain
         llm_chain = load_normal_chain()
@@ -63,19 +63,20 @@ def process_image(image_bytes, user_data):
         # Get LLM response (expects JSON)
         llm_response = llm_chain.run(food_list_str, combined_data)
         print("Raw LLM response:", llm_response)
-        # raw_llm_response = ... (received from llm_chain.run(...))
+
+        # Save LLM response to file
         file_path = save_llm_response_to_file(llm_response, user_data)
 
+        # Read the JSON data from the saved file
+        with open(file_path, 'r') as f:
+            nutrition_data = json.load(f)
 
-        # Convert response to JSON
-    
-
-        return file_path
-
+        return nutrition_data
 
     except Exception as e:
         print(f"Error in process_image: {e}")
         return {"error": str(e)}
+
 def save_llm_response_to_file(raw_llm_response, user_data) -> str:
     """
     Cleans and parses the LLM string response into JSON and saves it to file.

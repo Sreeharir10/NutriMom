@@ -1,0 +1,22 @@
+{
+  "user_data": {
+    "allergies": [
+      "nuts"
+    ],
+    "diet_type": "non-vegetarian",
+    "medical_conditions": [
+      "hypertension",
+      "anemia",
+      "thyroid"
+    ],
+    "trimester": 2
+  },
+  "Biriyani": {
+    "Calories": "200 kcal per 100g",
+    "Macronutrients": "Carbs: 28g, Protein: 10g, Fat: 8g, Fiber: 1.5g",
+    "Key Vitamins & Minerals": "Iron (2.5 mg), B Vitamins (Niacin: 5 mg, B6: 0.5 mg), Phosphorus (150 mg)",
+    "Pregnancy Benefits": "Rich in iron to help manage anemia, especially when paired with vitamin C-rich foods. Provides protein and energy for overall health. B vitamins support nerve function and fetal development. Phosphorus is essential for bone health and energy production.",
+    "Risks": "High in calories and fat, which may contribute to weight gain and exacerbate hypertension. High sodium content from spices can be a concern for blood pressure. May contain hidden nuts due to cross-contamination, which could trigger an allergic reaction.",
+    "Best Ways to Eat": "Opt for a homemade version with less oil, more vegetables, and lean meats. Pair with a side of raita (yogurt) for probiotics and a salad for fiber and vitamins. Ensure it is prepared without nuts to avoid allergic reactions. Practice portion control to manage calorie intake."
+  }
+}

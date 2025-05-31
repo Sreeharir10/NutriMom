@@ -1,0 +1,30 @@
+{
+  "user_data": {
+    "allergies": [
+      "nuts"
+    ],
+    "diet_type": "non-vegetarian",
+    "medical_conditions": [
+      "hypertension",
+      "anemia",
+      "thyroid"
+    ],
+    "trimester": 2
+  },
+  "Plain Rice": {
+    "Calories": "130 kcal per 100g",
+    "Macronutrients": "Carbs: 28.5g, Protein: 2.7g, Fat: 0.5g, Fiber: 0.4g",
+    "Key Vitamins & Minerals": "Iron (0.2 mg), Folate (3 mcg)",
+    "Pregnancy Benefits": "Provides essential carbohydrates for energy, which is crucial during the second trimester. The iron content helps manage anemia when consumed with vitamin C-rich foods. Folate supports fetal development and prevents neural tube defects.",
+    "Risks": "Has a high glycemic index, which may cause blood sugar spikes. Low in fiber, so excessive consumption could lead to digestive discomfort or contribute to weight gain, which is not ideal for managing hypertension.",
+    "Best Ways to Eat": "Pair with protein sources like lentils, eggs, or lean meats. Add vegetables for fiber and nutrients. Include a vitamin C-rich food like tomatoes or spinach to enhance iron absorption."
+  },
+  "Roti": {
+    "Calories": "120 kcal per 100g",
+    "Macronutrients": "Carbs: 25g, Protein: 3g, Fat: 2g, Fiber: 3g",
+    "Key Vitamins & Minerals": "Iron (1.5 mg), B Vitamins, Selenium (8 mcg)",
+    "Pregnancy Benefits": "Whole wheat roti provides fiber, which aids digestion and prevents constipation. Iron helps manage anemia, while B vitamins support energy production and fetal growth.",
+    "Risks": "Can be high in empty calories if made with refined flour. Overconsumption may lead to weight gain, which is a concern for hypertension. Ensure proper portion control.",
+    "Best Ways to Eat": "Use whole wheat flour for higher fiber content. Serve with vegetables or non-vegetarian dishes to balance the meal. Avoid excessive ghee or butter to keep it healthy."
+  }
+}

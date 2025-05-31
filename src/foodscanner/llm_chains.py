@@ -14,7 +14,7 @@ with open("config.yaml", "r") as f:
 
 class OpenRouterInferenceLLM(Runnable):
     """ Custom LLM class to interact with OpenRouter API """
-    
+
     def __init__(self, model_name=config["model_path"], api_key=config["api_key"]):
         self.api_key = api_key
         self.model_name = model_name
@@ -27,7 +27,7 @@ class OpenRouterInferenceLLM(Runnable):
             prompt = prompt.format()
 
         messages = [{"role": "user", "content": prompt}]
-        
+
         response = requests.post(
             url=self.base_url,
             headers={
@@ -66,8 +66,8 @@ class ChatChain:
 
     def run(self, user_input, combined_data):
         if isinstance(user_input, list):  # Ensure user_input is a string, not a list
-            user_input = ", ".join(user_input) 
-          
+            user_input = ", ".join(user_input)
+
         return self.llm_chain.run({"food_list": user_input, "combined_data": combined_data})
 
 def load_normal_chain():

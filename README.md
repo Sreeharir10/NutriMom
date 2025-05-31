@@ -71,3 +71,5 @@ Pregnancy and postpartum stages require increased nutritional awareness to suppo
 ```bash
 git clone https://github.com/your-username/nutrimom.git
 cd nutrimom
+cd src/foodscanner
+py app.py
